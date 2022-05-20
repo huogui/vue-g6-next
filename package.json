@@ -1,0 +1,59 @@
+{
+  "name": "vue-g6-next",
+  "version": "0.0.1",
+  "main": "./lib/vue-g6-next.umd.js",
+  "module": "./lib/vue-g6-next.es.js",
+  "exports": {
+    ".": {
+      "import": "./lib/vue-g6-next.es.js",
+      "require": "./lib/vue-g6-next.umd.js"
+    },
+    "./lib/style.css": {
+      "import": "./lib/style.css",
+      "require": "./lib/style.css"
+    }
+  },
+  "types": "./types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huogui/vue-g6-next"
+  },
+  "homepage": "https://huogui.github.io/vue-g6-next",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vue-tsc --noEmit && vite build",
+    "prepare": "husky install",
+    "eslint": "eslint src --ext .ts,.js,.vue --fix",
+    "stylelint": "stylelint src/**/*.{vue,css,less,scss} --fix",
+    "preview": "vite build --config vite.config.preview.ts",
+    "lint": "npm run eslint && npm run stylelint",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "eslint": "^8.15.0",
+    "eslint-config-jammy": "^0.0.9",
+    "husky": "^8.0.1",
+    "less": "^4.1.2",
+    "lint-staged": "^12.4.1",
+    "postcss-html": "^1.4.1",
+    "postcss-less": "^6.0.0",
+    "postcss-scss": "^4.0.4",
+    "standard-version": "^9.5.0",
+    "stylelint": "^14.8.2",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^25.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.9",
+    "vue-tsc": "^0.34.15"
+  },
+  "dependencies": {
+    "vue": "^3.2.33"
+  }
+}
