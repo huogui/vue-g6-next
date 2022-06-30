@@ -48,6 +48,8 @@ window.JVerificationInterface.init({
     });
   },
   fail(data) {
+    // eslint-disable-next-line
+    alert('初始化失败', JSON.stringify(data));
     // TODO 初始化失败回调
   },
 });
