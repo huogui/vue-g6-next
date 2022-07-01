@@ -13,15 +13,18 @@ window.JVerificationInterface.init({
       console.log(data);
       return;
     }
+    window.JVerificationInterface.setCustomUIWithConfig({
+      logo: 'https://opencloud.wostore.cn/h5netauth/h5auth_demo/img/logo3.png',
+      appName: '测试应用名称',
+    });
     window.JVerificationInterface.getToken({
-      operater: 'CM',
       success(data1) {
         // TODO 获取token成功回调
         // eslint-disable-next-line
         alert('获取token成功');
         console.log(data1);
         window.JVerificationInterface.loginAuth({
-          operater: 'CM',
+          operater: 'CU',
           type: 'full',
           success(data2) {
             console.log(data2);
@@ -42,6 +45,7 @@ window.JVerificationInterface.init({
       },
       fail(data4) {
         // TODO 获取token失败回调
+        console.log(data4);
         // eslint-disable-next-line
         alert('获取token失败');
       },
@@ -49,7 +53,7 @@ window.JVerificationInterface.init({
   },
   fail(data) {
     // eslint-disable-next-line
-    alert('初始化失败', JSON.stringify(data));
+    alert("初始化失败",JSON.stringify(data))
     // TODO 初始化失败回调
   },
 });
